@@ -1,0 +1,27 @@
+diego@diego-Shyvana:~$ sudo apt install php8.1-interbase
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias... Hecho
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes NUEVOS:
+  php8.1-interbase
+0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 17 no actualizados.
+Se necesita descargar 16.3 kB de archivos.
+Se utilizarán 73.7 kB de espacio de disco adicional después de esta operación.
+Des:1 http://mx.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 php8.1-interbase amd64 8.1.2-1ubuntu2.23 [16.3 kB]
+Descargados 16.3 kB en 1s (22.5 kB/s)         
+Seleccionando el paquete php8.1-interbase previamente no seleccionado.
+(Leyendo la base de datos ... 160405 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../php8.1-interbase_8.1.2-1ubuntu2.23_amd64.deb ...
+Desempaquetando php8.1-interbase (8.1.2-1ubuntu2.23) ...
+Configurando php8.1-interbase (8.1.2-1ubuntu2.23) ...
+
+Creating config file /etc/php/8.1/mods-available/pdo_firebird.ini with new version
+Procesando disparadores para libapache2-mod-php8.1 (8.1.2-1ubuntu2.23) ...
+Procesando disparadores para php8.1-cli (8.1.2-1ubuntu2.23) ...
+diego@diego-Shyvana:~$ sudo phpenmod pdo_firebird
+sudo systemctl restart apache2
+diego@diego-Shyvana:~$ php -m | grep -i firebird
+PDO_Firebird
+diego@diego-Shyvana:~$ nc -zv 172.24.10.251 3050
+Connection to 172.24.10.251 3050 port [tcp/gds-db] succeeded!
+diego@diego-Shyvana:~$ 
