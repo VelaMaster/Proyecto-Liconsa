@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@theme {
+ 
+  --color-app-bg: #f9fafb;
+  --color-app-card: #ffffff;
+  --color-app-text: #111827;
+  --color-app-border: #e5e7eb;
+}
+ 
+  @variant dark (&:where(.dark, .dark *)) {
+    --color-app-bg: #0f172a;
+    --color-app-card: #1e293b;
+    --color-app-text: #f8fafc;
+    --color-app-border: #334155;
+  }
+
+@layer base {
+  body {
+    @apply bg-app-bg text-app-text transition-colors duration-300 min-h-screen;
+  }
+}
